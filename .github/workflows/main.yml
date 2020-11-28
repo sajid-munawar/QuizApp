@@ -38,4 +38,4 @@ jobs:
       run: npm install -g surge
        
     - name: deploying on surge
-      run: surge ./build sajid-fetch-react.surge.sh --token ${{ secrets.MY_SURGE_TOKEN }}
+      run: surge ./build sajid-quiz-app.surge.sh --token ${{ secrets.MY_SURGE_TOKEN }}
