@@ -1,6 +1,6 @@
 import { type } from "os";
 
-export type QuestionType = {
+export type QuizType = {
     category: string
     correct_answer: string
     difficulty: string
@@ -8,7 +8,7 @@ export type QuestionType = {
     question: string
     type: string
 }
-export type Quiz ={
+export type QuestionType ={
     question:string
     answer:string
     option:string[]
