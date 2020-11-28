@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import {getQuizDetails} from "./services/quiz_service";
-import {QuizType,} from "./types/quiz_types"
+import {QuizType,} from "./types/quiz_types";
+// import QuestionCard from "./Components/questionCard"
+import Aa from "./Components/aa"
 
 function App() {
   let [quiz,setQuiz]=useState<QuizType[]>([])
@@ -14,16 +16,22 @@ function App() {
     }
     getData();
   },[])
-  let aa=quiz
-  console.log({aa})
+  // let aa=quiz
+  console.log({quiz})
   if (quiz.length<2){
     return <div>Loading...</div>
   }
   return (
     <div className="App">
+      <Aa/>
+      {/* <h1>Hiii</h1> */}
+      {/* <QuestionCard/> */}
+      {/* <div>{quiz[1].difficulty}</div>
+      <div></div>
+      <div></div> */}
       {quiz[1].question}<br/>
-      {quiz[1].difficulty}
-      {/* {quiz[1].option} */}
+      {/* {quiz[1].difficulty} */}
+      {quiz[1].option}
     </div>
   );
 }
