@@ -4,7 +4,12 @@ import {getQuizDetails} from "./services/quiz_service"
 
 function App() {
   useEffect (()=>{
-    getQuizDetails(5,"easy")
+    async function getData(){
+      const results=await getQuizDetails(5,"easy")
+      console.log(results)
+
+    }
+    getData();
   },[])
   return (
     <div className="App">
