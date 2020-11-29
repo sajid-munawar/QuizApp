@@ -1,4 +1,6 @@
-import { type } from "os";
+// import { type } from "os";
+import React from 'react';
+
 
 export type QuizType = {
     category: string
@@ -17,4 +19,5 @@ export type QuestionType ={
 export type questonPropsType ={
     question:string
     options:string[]
+    callback:(e:React.FormEvent<EventTarget>)=>void
 }
