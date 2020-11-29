@@ -8,6 +8,7 @@ import Aa from "./Components/aa"
 function App() {
   let [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentstep, setCurrentStep] = useState(0)
+  let [score, setScore] = useState(0)
 
 
   useEffect(() => {
@@ -25,24 +26,35 @@ function App() {
     return <h3>Loading...</h3>
 
   }
-  const handleSubmit = (e: React.FormEvent<EventTarget>,userAns:string) => {
+
+
+  const handleSubmit = (e: React.FormEvent<EventTarget>, userAns: string) => {
     e.preventDefault()
-    console.log(userAns)
-    if (currentstep !== quiz.length - 1)
-      setCurrentStep(++currentstep)
-    else {
-      setCurrentStep(0)
+
+    const currentQuestion: QuestionType = quiz[currentstep];
+
+    if (userAns === currentQuestion.correct_answer) {
+      setScore(++score)
     }
+    // console.log(userAns)
+    if (currentstep !== quiz.length - 1){
+      setCurrentStep(++currentstep)
+    }
+    else {
+      alert("score=" + score)
+      setCurrentStep(0)
+      setScore(0)
   }
-  return (
-    <div className="App">
-      <Aa
-        options={quiz[currentstep].option}
-        question={quiz[currentstep].question}
-        callback={handleSubmit}
-      />
-    </div>
-  );
+}
+return (
+  <div className="App">
+    <Aa
+      options={quiz[currentstep].option}
+      question={quiz[currentstep].question}
+      callback={handleSubmit}
+    />
+  </div>
+);
 }
 
 export default App;
