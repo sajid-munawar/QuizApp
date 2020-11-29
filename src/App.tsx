@@ -24,14 +24,6 @@ function App() {
   return (
     <div className="App">
       <Aa/>
-      {/* <h1>Hiii</h1> */}
-      {/* <QuestionCard/> */}
-      {/* <div>{quiz[1].difficulty}</div>
-      <div></div>
-      <div></div> */}
-      {quiz[1].question}<br/>
-      {/* {quiz[1].difficulty} */}
-      {quiz[1].option}
     </div>
   );
 }
