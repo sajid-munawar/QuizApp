@@ -12,7 +12,7 @@ const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
 
     return <div className="queston-container">
         <div className="question">
-            {question}
+            <h4>{question}</h4>
         </div>
         <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}>
             {options.map((opt: string, ind: number) => {
