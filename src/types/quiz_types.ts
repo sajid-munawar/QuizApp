@@ -14,3 +14,7 @@ export type QuestionType ={
     option:string[]
 
 }
+export type questonPropsType ={
+    question:string
+    options:string[]
+}

@@ -1,6 +1,7 @@
-import React from 'react'
-const Aa:React.FC<any> = ({question, option}) => {
-    console.log(question,option)
+import React from 'react';
+import {questonPropsType} from "./../types/quiz_types"
+const Aa:React.FC<questonPropsType> = ({question, options}) => {
+    console.log(question,options)
     return <div>
         <h1>Hello </h1>
     </div>

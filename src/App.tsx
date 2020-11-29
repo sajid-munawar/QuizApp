@@ -18,13 +18,13 @@ function App() {
   },[])
   // let aa=quiz
   console.log({quiz})
-  if (quiz.length<2){
-    return <div>Loading...</div>
+  if (!quiz.length){
+    return <h3>Loading...</h3>
   }
   return (
     <div className="App">
       <Aa
-      option={quiz[0].option}
+      options={quiz[0].option}
       question={quiz[0].question }
       />
     </div>
