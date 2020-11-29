@@ -36,7 +36,7 @@ function App() {
     if (userAns === currentQuestion.correct_answer) {
       setScore(++score)
     }
-    // console.log(userAns)
+    console.log(`correct answer:${currentQuestion.correct_answer} & user answer:${userAns}`)
     if (currentstep !== quiz.length - 1){
       setCurrentStep(++currentstep)
     }
