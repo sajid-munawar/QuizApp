@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import {getQuizDetails} from "./services/quiz_service";
-import {QuizType,} from "./types/quiz_types";
+import {QuestionType,} from "./types/quiz_types";
 // import QuestionCard from "./Components/questionCard"
 import Aa from "./Components/aa"
 
 function App() {
-  let [quiz,setQuiz]=useState<QuizType[]>([])
+  let [quiz,setQuiz]=useState<QuestionType[]>([])
   useEffect (()=>{
     async function getData(){
-      const questions:QuizType[]=await getQuizDetails(5,"easy")
+      const questions:QuestionType[]=await getQuizDetails(5,"easy")
       // console.log(questions)
       setQuiz(questions)
 
@@ -23,7 +23,10 @@ function App() {
   }
   return (
     <div className="App">
-      <Aa/>
+      <Aa
+      option={quiz[0].option}
+      question={quiz[0].question }
+      />
     </div>
   );
 }
