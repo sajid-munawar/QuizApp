@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { questonPropsType } from "./../types/quiz_types"
-const Aa: React.FC<questonPropsType> = ({ question, options,callback }) => {
-    console.log(question, options)
+const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
+    // console.log(question, options)
+
+    let [selectedAns, setSelectedAns] = useState("")
+
+    const handleSelection = (ev: any) => {
+        // console.log(ev.target.value);
+        setSelectedAns(ev.target.value)
+    }
+
     return <div className="queston-container">
         <div className="question">
             {question}
         </div>
-        <form onSubmit={callback}>
+        <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}>
             {options.map((opt: string, ind: number) => {
                 return <div key={ind}>
                     <label >
-                        <input type="radio"
+                        <input
+                            type="radio"
                             name="opt"
-                            value={opt} />
+                            required
+                            checked={selectedAns === opt}
+                            value={opt}
+                            onChange={handleSelection}
+                        />
                         {opt}
 
                     </label>

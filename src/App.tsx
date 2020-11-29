@@ -23,15 +23,16 @@ function App() {
   // console.log({ quiz })
   if (!quiz.length) {
     return <h3>Loading...</h3>
-    
+
   }
-      const handleSubmit = (e: React.FormEvent<EventTarget>) => {
-        e.preventDefault()
-        if (currentstep !==quiz.length-1)
-         setCurrentStep(++currentstep)
-        else {
-          setCurrentStep(0)
-        }
+  const handleSubmit = (e: React.FormEvent<EventTarget>,userAns:string) => {
+    e.preventDefault()
+    console.log(userAns)
+    if (currentstep !== quiz.length - 1)
+      setCurrentStep(++currentstep)
+    else {
+      setCurrentStep(0)
+    }
   }
   return (
     <div className="App">
