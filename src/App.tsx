@@ -59,7 +59,6 @@ function App() {
       <button onClick={() => window.location.reload()} className="btn">Next Quiz</button>
     </div>
     </div>
-
   }
   return (
     <div className="App">

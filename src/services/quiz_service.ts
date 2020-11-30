@@ -1,4 +1,3 @@
-// import React from 'react';
 import { QuizType, QuestionType } from "../types/quiz_types"
 const shuffleArray = (array: any[]) =>
     [...array].sort(() => Math.random() - 0.5)
