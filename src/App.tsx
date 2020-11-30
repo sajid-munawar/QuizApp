@@ -29,6 +29,7 @@ function App() {
   }
 
 
+
   const handleSubmit = (e: React.FormEvent<EventTarget>, userAns: string) => {
     e.preventDefault()
 
@@ -49,12 +50,16 @@ function App() {
     }
   }
   if (isResult) {
-    return <div className="question-container result-heading">
-      <h1 >Result</h1>
-      <h3>Total score: {quiz.length}</h3>
+    return <div> <div className="question-container result-heading">
+      <h1 className="quiz-app">Quiz App</h1>
+      <h2 >Result</h2>
+      <h4>Total score: {quiz.length}</h4>
       <h3>Obtained score: {score}</h3>
-      <h3>Percentage: {(score/quiz.length*100).toFixed(2)} %</h3>
+      <h3>Percentage: {(score / quiz.length * 100).toFixed(2)} %</h3>
+      <button onClick={() => window.location.reload()} className="btn">Next Quiz</button>
     </div>
+    </div>
+
   }
   return (
     <div className="App">

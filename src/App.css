@@ -7,13 +7,17 @@
     margin-top: 50px;
     border-radius: 4px;
 }
+.quiz-app {
+    text-align: center;
+    margin-top: 0%;
+}
 .question-container.result-heading{
     text-align: center;
     background-color: rgb(22, 190, 190);
     border-radius: 10px;
     
 }
-.question-form .submit {
+.question-form .submit ,.btn {
     width: 100%;
     background-color: rgb(74, 74, 250);
     color: white;

@@ -12,6 +12,7 @@ const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
 
     return <div className="question-container">
         <div className="question">
+        <h1 className="quiz-app">Quiz App</h1>
             <h4>{question}</h4>
         </div>
         <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}
