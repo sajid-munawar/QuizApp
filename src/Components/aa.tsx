@@ -14,10 +14,12 @@ const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
         <div className="question">
             <h4>{question}</h4>
         </div>
-        <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}>
+        <form onSubmit={(e: React.FormEvent<EventTarget>) => callback(e, selectedAns)}
+        className="question-form"
+        >
             {options.map((opt: string, ind: number) => {
                 return <div key={ind}>
-                    <label >
+                    <label className="radio">
                         <input
                             type="radio"
                             name="opt"
@@ -31,7 +33,7 @@ const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
                     </label>
                 </div>
             })}
-            <input type="submit" />
+            <input type="submit" className="submit" />
         </form>
     </div>
 }

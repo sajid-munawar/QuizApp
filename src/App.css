@@ -1,4 +1,23 @@
 .queston-container {
     max-width: 500px;
-    
+    box-shadow: 0px 5px 20px #a57c7c;
+    margin: 0 auto;
+    /* margin-top: 10px; */
+    padding: 20px;
+    margin-top: 50px;
+}
+.question-form .submit {
+    width: 100%;
+    background-color: rgb(74, 74, 250);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 9px;
+    margin-top: 15px;
+
+}
+
+.question-form .radio {
+    display: block;
+    margin: 9px 0;
 }
