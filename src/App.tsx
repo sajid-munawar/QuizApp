@@ -9,11 +9,12 @@ function App() {
   let [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentstep, setCurrentStep] = useState(0)
   let [score, setScore] = useState(0)
+  let [isResult,setIsResult]=useState(false)
 
 
   useEffect(() => {
     async function getData() {
-      const questions: QuestionType[] = await getQuizDetails(5, "easy")
+      const questions: QuestionType[] = await getQuizDetails(3, "easy")
       // console.log(questions)
       setQuiz(questions)
 
@@ -41,10 +42,14 @@ function App() {
       setCurrentStep(++currentstep)
     }
     else {
-      alert("score=" + score)
-      setCurrentStep(0)
-      setScore(0)
+      // alert("score=" + score)
+      setIsResult(true);
+      // setCurrentStep(0)
+      // setScore(0)
   }
+}
+if (isResult){
+return <div><h1>Score: {score} out of {quiz.length}</h1></div>
 }
 return (
   <div className="App">
