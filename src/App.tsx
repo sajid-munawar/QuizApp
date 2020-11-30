@@ -9,12 +9,12 @@ function App() {
   let [quiz, setQuiz] = useState<QuestionType[]>([])
   let [currentstep, setCurrentStep] = useState(0)
   let [score, setScore] = useState(0)
-  let [isResult,setIsResult]=useState(false)
+  let [isResult, setIsResult] = useState(false)
 
 
   useEffect(() => {
     async function getData() {
-      const questions: QuestionType[] = await getQuizDetails(3, "easy")
+      const questions: QuestionType[] = await getQuizDetails(5, "easy")
       // console.log(questions)
       setQuiz(questions)
 
@@ -38,7 +38,7 @@ function App() {
       setScore(++score)
     }
     console.log(`correct answer:${currentQuestion.correct_answer} & user answer:${userAns}`)
-    if (currentstep !== quiz.length - 1){
+    if (currentstep !== quiz.length - 1) {
       setCurrentStep(++currentstep)
     }
     else {
@@ -46,20 +46,25 @@ function App() {
       setIsResult(true);
       // setCurrentStep(0)
       // setScore(0)
+    }
   }
-}
-if (isResult){
-return <div><h1>Score: {score} out of {quiz.length}</h1></div>
-}
-return (
-  <div className="App">
-    <Aa
-      options={quiz[currentstep].option}
-      question={quiz[currentstep].question}
-      callback={handleSubmit}
-    />
-  </div>
-);
+  if (isResult) {
+    return <div className="question-container result-heading">
+      <h1 >Result</h1>
+      <h3>Total score: {quiz.length}</h3>
+      <h3>Obtained score: {score}</h3>
+      <h3>Percentage: {(score/quiz.length*100).toFixed(2)} %</h3>
+    </div>
+  }
+  return (
+    <div className="App">
+      <Aa
+        options={quiz[currentstep].option}
+        question={quiz[currentstep].question}
+        callback={handleSubmit}
+      />
+    </div>
+  );
 }
 
 export default App;

@@ -10,7 +10,7 @@ const Aa: React.FC<questonPropsType> = ({ question, options, callback }) => {
         setSelectedAns(ev.target.value)
     }
 
-    return <div className="queston-container">
+    return <div className="question-container">
         <div className="question">
             <h4>{question}</h4>
         </div>
